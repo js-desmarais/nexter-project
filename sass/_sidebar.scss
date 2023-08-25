@@ -1,0 +1,24 @@
+@use 'base' as *;
+@use 'typography' as *;
+
+.sidebar {
+	background-color: $color-primary;
+	grid-column: sidebar-start / sidebar-end;
+	grid-row: 1 / -1;
+
+	display: flex;
+	justify-content: center;
+
+	& .menu-btn,
+	& .menu-btn::before,
+	& .menu-btn::after {
+		background-color: #fff;
+	}
+
+	@media only screen and (max-width: $bp-large) {
+		grid-column: 1 / -1;
+		grid-row: 1 / 2;
+		justify-content: flex-end;
+		align-items: center;
+	}
+}

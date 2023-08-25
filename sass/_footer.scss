@@ -1,0 +1,68 @@
+@use 'base' as *;
+
+.footer {
+	background-color: $color-secondary;
+	grid-column: full-start / full-end;
+	padding: 8rem;
+}
+
+.nav {
+	&__list {
+		/********Solution 1: Grid***********/
+		// display: grid;
+		// grid-template-columns: repeat(auto-fit, minmax(15rem, 1f        r));
+		// gap: 2rem;
+		// align-items: center;
+
+		/*code above replaced by the code below*/
+
+		/********Solution 2: Flex***********/
+		display: flex;
+		flex-wrap: wrap;
+		gap: 2rem;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+	&__item {
+		display: block;
+		width: 15rem;
+		min-height: 7.5rem;
+		padding: 1.5rem;
+		margin-top: 2rem;
+
+		display: grid;
+		justify-content: center;
+		align-items: center;
+
+		transition: all 0.2s;
+
+		&:hover {
+			background-color: rgba(#fff, 0.1);
+			transform: translateY(-0.3rem);
+		}
+	}
+
+	&__link {
+		color: #fff;
+
+		font: {
+			size: 1.4rem;
+			family: $font-display;
+		}
+
+		text: {
+			transform: uppercase;
+			align: center;
+		}
+	}
+}
+
+.copyright {
+	font-size: 1.4rem;
+	color: $color-grey-light-2;
+	text-align: center;
+
+	width: 60%;
+	margin: 6rem auto;
+}
